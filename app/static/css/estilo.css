@@ -1,0 +1,263 @@
+#negocio{
+	font-family: 'Courier New';
+}
+* {
+	/*	border: red 1px solid; */
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: white;
+}
+
+.main-row {
+	margin-top: 10px;
+	background-color: white;
+	box-shadow: 0 0 10px 10px rgba(0, 0, 0, .07);
+	border-radius: 7px;
+	padding: 5px;
+}
+
+.info-user {
+	margin: 5px;
+	padding: 3px;
+	justify-content: center;
+}
+
+.icon-user {
+	align-content: center;
+	float: left;
+}
+
+.product-img {
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	object-fit: cover;
+	border-radius: 0.5 rem;
+	margin: 10px;
+}
+
+.icon-guardar {
+	text-align: center;
+	float: right;
+	border: none;
+	background: none;
+}
+
+#btn-comprar {
+	margin: 5px;
+	width: 100%;
+}
+
+/*PARA COMENTAR*/
+#comment {
+	resize: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#div-comment {
+	background-color: white;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+/*PARA COMPARTIR*/
+#div-redes {
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#listnav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#search {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.deseos {
+	color: black;
+}
+
+.deseos:link,
+.deseos:visited,
+.deseos:active {
+	text-decoration: none;
+}
+
+#dropdown1 {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#img {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.imagen1 {
+	filter: invert(100%);
+}
+
+.imagen2 {
+	margin: 10px;
+}
+
+.imagen3 {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 150px;
+	height: 150px;
+	filter: brightness(1.1);
+	mix-blend-mode: multiply;
+}
+
+.state {
+	background-color: #F2F3F4;
+	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 7px;
+	color: #337DFF;
+	font-weight: bold;
+}
+
+.notstate {
+	background-color: #F2F3F4;
+	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 7px;
+	color:red;
+	font-weight: bold;
+}
+
+#precio1 {
+	color: black;
+	font-weight: bold;
+}
+
+#precio2 {
+	color: red;
+	font-weight: bold;
+}
+
+footer {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#legal1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#legal2 {
+	margin: auto;
+}
+
+#crearl {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.card {
+	margin-top: 10px;
+	background-color: white;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, .07);
+	border-radius: 7px;
+	padding: 5px;
+}
+
+.container-4 {
+	overflow: hidden;
+	width: 300px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.container-4 input#search {
+	width: 300px;
+	height: 50px;
+	background: #fafafa;
+	border: none;
+	font-size: 11pt;
+	float: left;
+	color: #fff;
+	padding-left: 15px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.container-4 input#search::-webkit-input-placeholder {
+	color: #65737e;
+}
+
+.container-4 input#search:-moz-placeholder {
+	/* Firefox 18- */
+	color: #65737e;
+}
+
+.container-4 input#search::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #65737e;
+}
+
+.container-4 input#search:-ms-input-placeholder {
+	color: #65737e;
+}
+
+.container-4 button.icon {
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+
+	border: none;
+	background: #ffffff;
+	height: 50px;
+	width: 50px;
+	color: #4f5b66;
+	opacity: 0;
+	font-size: 10pt;
+
+	-webkit-transition: all .55s ease;
+	-moz-transition: all .55s ease;
+	-ms-transition: all .55s ease;
+	-o-transition: all .55s ease;
+	transition: all .55s ease;
+}
+
+.container-4:hover button.icon,
+.container-4:active button.icon,
+.container-4:focus button.icon {
+	outline: none;
+	opacity: 1;
+	margin-left: -50px;
+}
+
+.container-4:hover button.icon:hover {
+	background: white;
+}
+
+#formFavorito{
+	display: none;
+}

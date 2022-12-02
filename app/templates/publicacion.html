@@ -1,0 +1,120 @@
+{% extends './base/base.html' %}
+{% load static %}
+{% block content %}
+<!--<script>
+	function favorito()
+	{
+		alert("Hola!");
+	}
+</script>-->
+	
+	<div class="container">
+
+		<div class="row main-row p-2">
+			<!-- info de usuario y foto -->
+			<div class="col-lg-8 col-md-12">
+				<div class="info-user">
+					<img class="icon-user" src="https://cdn-icons-png.flaticon.com/512/552/552721.png" width="34">
+					<div>
+						<h5>&nbsp;{{publicacion.carnet.nombres}}</h5>
+					</div>
+				</div>
+				<div class="product-img">
+					<img src="{{publicacion.path_foto.url}}" alt="nature" class="img-fluid" >
+				</div>
+			</div>
+			<!-- info de producto y botones GUARDAR Y COMPRAR -->
+			<div class="col-lg-4 col-md-12">
+				<form id="formFavorito" method="post">
+					<input type="number" name="id_publicacion" id="id_publicacion" value="{{publicacion.id_publicacion}}">
+				</form>
+				<button id="liston_favorito"class="icon-guardar">
+					{% if favorito == 1%}
+					<svg id="eliminar_favorito" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16" onclick="eliminar_favorito()">
+						<path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+					</svg>
+					{% endif %}
+
+					{% if favorito == 0%}
+					<svg id="seleccionar_favorito" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16" onclick="favorito()">
+						<path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+					</svg>
+					{% endif %}
+				</button>
+
+				<div class="product-title mb-3">
+					<h3>{{publicacion.id_producto.nombres}}</h3>
+				</div>
+				<hr style="color: #0004;" />
+				<div class="product-date mb-2">
+					<h5>Descripción del producto </h5>
+				</div>
+				<div class="product-desc">
+					<p>
+						{{publicacion.descripcion}}
+					</p>
+				</div>
+				<hr style="color: #0004;" />
+				<div>Precio: ${{publicacion.id_producto.precio}}</div>
+				<div>Unidades disponibles: {{publicacion.id_producto.cantidad_disponible}}</div>
+				<hr style="color: #0004;" />
+
+				
+
+			</div>
+		</div>
+
+<hr style="color: #000;" />
+
+		<div id="div-comment" class="row p-2">
+			
+			<div class="row d-flex ">
+				<div class="col-md-8 col-lg-6">
+				  <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+					<div class="card-body p-4">
+						<h5>Comentarios</h5>
+					</div>
+					<div id="comment_Ajax" class="card-body p-4">
+					{% for comment in comentarios %}
+					  <div class="card mb-4">
+						<div class="card-body">
+						  <p>{{comment.commet}}</p>
+			  
+						  <div class="d-flex justify-content-between">
+							<div class="d-flex flex-row align-items-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+									<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+								</svg>
+							  	<p class="small mb-0 ms-2">{{comment.carnet.carnet}} - {{comment.carnet.nombres}} {{comment.carnet.apellidos}}</p>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					{% endfor %}
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+			<div class="col-lg col-md-12 py-2">
+				<form id="form_Comment" method="post">
+					<input class="d-none" type="number" name="id_publicacion_comment" id="id_publicacion_comment" value="{{publicacion.id_publicacion}}">
+					<textarea class="form-control" rows="3" id="txtComment" name="txtComment" placeholder="Escribe un comentario..."></textarea>
+				</form>
+			</div>
+			<div class="col-lg col-md-12">
+				<button id="btn-comment" class="btn btn-outline-dark" onclick="comentar()">COMENTAR</button>
+			</div>
+		</div>
+
+<center>
+<div id="div-redes" class="iconos-sociales">Compartir:
+<a href=""><img loading="lazy" alt="Compartir en Facebook" height="35" width="35" src=" https://1.bp.blogspot.com/-Pop-U7OywXs/YPhkfrImyiI/AAAAAAAAA1Y/UBnVfTK9j2U-bIUqwZYMNSQPvz_l06mbwCPcBGAYYCw/s0/facebook-icono.png" title="Compartir en Facebook"/></a>
+<a href=""><img loading="lazy" alt="Compartir en WhatsApp" height="35" width="35" src=" https://1.bp.blogspot.com/-Vc_W7xraNnc/YPhkfwQExQI/AAAAAAAAA1c/dI72v37UC0EGJd7jWvKWYD3WMwZ7eER7gCPcBGAYYCw/s0/whatsapp-icono.png" title="Compartir en WhatsApp"/></a>
+<a href=""><img loading="lazy" alt=" Compartir en Twitter" height="35" width="35" src=" https://1.bp.blogspot.com/-2JwTJZxg1AU/YPhkfB0DdjI/AAAAAAAAA1c/tDKdU6tS0A0lt4YegGUVd7k-9hguYz82ACPcBGAYYCw/s0/Twitter-icono.png" title="Compartir en Twitter"/></a>
+</div>
+</center>
+
+</div>
+
+{% endblock %}

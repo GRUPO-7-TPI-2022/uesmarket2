@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="nav navbar-light mb-3">
+    <div class="col-8">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'favoritos' %}">Todos los productos ({{numPublicaciones}})</a>
+        </li>
+       
+      </ul>
+    </div>
+    
+  </div>
+
+
+  <div class="container" method="POST">
+    <!--Para mostrar las publicaciones favoritas del usuario-->
+    
+    {% for c in publicacion%}
+    <div class="card mb-3">
+      <div class="row">
+        <div class="col-4" id="img">
+          <img src="{{c.publicacion.path_foto.url}}" class="img-fluid rounded-start imagen2" />
+        </div>
+        <div class="col-8">
+          <div class="card-body">
+            <h5>{{c.publicacion.id_producto.nombres|upper}}</h5>
+            <p class="card-text">
+              {{c.publicacion.descripcion}}
+            </p>
+            {% if c.publicacion.id_producto.cantidad_disponible > 0%}
+            <p>
+              <span class="state">Disponible</span>
+            </p>
+            {% else %}
+            <p>
+              <span class="notstate">Agotado</span>
+            </p>
+            {% endif %}
+            <div class="row align-items-center">
+              <div class="col-6">
+                <h7 class="card-text" id="precio1">Precio:</h7>
+                <h7 class="card-text" id="precio2">${{c.publicacion.id_producto.precio}}</h7>
+              </div>
+              <div class="col-6">
+                <div class="row text-center">
+                  <div class="col-6">
+                    <a href="eliminarFavorito/{{c.publicacion.id_publicacion}}" class="btn btn-danger btnEliminacion">Eliminar</a>
+                  </div>
+                </div>
+                <p class="card-text text-center">
+                  <small class="text-muted">Producto agregado {{c.publicacion.fecha_publicacion}}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+{% endblock %}

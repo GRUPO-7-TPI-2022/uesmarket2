@@ -1,0 +1,39 @@
+  <div class="tm-nav-section" style="background-color: #D6EAF8;">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light mb-2">
+        <div class="collapse navbar-collapse" id="tmMainNav">
+          <ul class="navbar-nav mx-auto tm-navbar-nav">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'inicio'%}">Ingeniería y Arquitectura</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/facultad/2">Medicina</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/facultad/3">Economía</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/facultad/4">Humanidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/facultad/5">Agronomía</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/facultad/6">Odontología</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/facultad/7">Jurisprudencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/facultad/8">Química y Farmacia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/facultad/9">Ciencias Naturales</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>

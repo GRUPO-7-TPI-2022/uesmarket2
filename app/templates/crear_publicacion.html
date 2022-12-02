@@ -1,0 +1,115 @@
+{% extends './base/base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        
+        <div class="card">
+            <div class="card-header">
+                <h5 class="text-center">Creación de publicación</h5>
+            </div>
+            <div class="card-body">
+                
+                <form action="/crearPublicacion/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                    <div class="form-group" style="display:none;">
+                    	<label>Usuario</label>
+                        <input type="text" id="txtUsername" name="txtUsername" class="form-control" value="{{user.username}}">
+                    </div>
+
+                    <div class="form-group">
+                    	<label>Nombre</label>
+                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" 
+                        minlength="1" maxlength="50" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Categoria</label>
+                        <select  id = "idCategoria" name="idCategoria" class="form-select form-control">
+                            <option value="" class="form-control"></option>
+                            {% for e in categorias %}
+                                <option value="{{e.id_categoria}}" class="form-control">{{e.nombre_categoria}}</option>
+                            {%endfor%}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                    	<label>Descripcion</label>
+                        <textarea id="txtDescripcion" name="txtDescripcion" class="form-control" 
+                        maxlength="50" ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                    	<label>Precio</label>
+                        <input type="text" id="NumPrecioDisponible" name="NumPrecioDisponible" class="form-control" 
+                        maxlength="50" >
+                    </div>
+
+                    <div class="form-group">
+                    	<label>Cantidad</label>
+                        <input type="text" id="NumCantidadDisponible" name="NumCantidadDisponible" class="form-control" 
+                        maxlength="50" >
+                    </div>
+
+                    <label for="">Imagen producto</label>
+                    <div class="form-group">
+                        <input type="file" class="form-control-file"id="imgUpload" name="imgUpload">
+                    </div>
+
+                    <label for="">Estado del producto</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value = "Nuevo" type="radio" name="txtEstadoProducto" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Nuevo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value = "Usado" type="radio" name="txtEstadoProducto" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Usado
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="text-center">Publicaciones</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Producto</th>
+                            <th>Imagen</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Estado</th>
+                            <th colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in publicaciones %}
+                        <tr class="text-center">
+                            <td>{{c.id_producto.nombres}}</td>
+                            <td><img src="{{c.path_foto.url}}" style="max-width:100%;width:auto;height:auto;"/></td>
+                            <td>{{c.id_producto.precio}}</td>
+                            <td>{{c.id_producto.cantidad_disponible}}</td>
+                            <td>{{c.id_producto.estado_producto}}</td>
+                            <td><a href="edicionPublicacion/{{c.id_publicacion}}" class="btn btn-info">Editar</a></td>
+                            <td><a href="eliminarPublicacion/{{c.id_publicacion}}" class="btn btn-danger">Eliminar</a></td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}-

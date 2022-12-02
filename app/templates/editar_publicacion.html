@@ -1,0 +1,82 @@
+{% extends './base/base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>Editar publicación</h5>
+            </div>
+            <div class="card-body">
+                
+                <form action="/editarPublicacion/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                    <div class="form-group" style="display:none;">
+                    	<label>Usuario</label>
+                        <input type="text" id="txtUsername" name="txtUsername" class="form-control" value="{{user.username}}">
+                        <label>Id publicacion</label>
+                        <input type="number" id="numPublicacion" name="numPublicacion" class="form-control" value="{{publicacion.id_publicacion}}">
+                    </div>
+
+                    <div class="form-group">
+                    	<label>Nombre</label>
+                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" 
+                        minlength="1" maxlength="50" value="{{publicacion.id_producto.nombres}}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Categoria</label>
+                        <select  id = "idCategoria" name="idCategoria" class="form-select form-control">
+                            <option value="{{publicacion.id_producto.id_categoria.id_categoria}}" class="form-control text-bg-info">{{publicacion.id_producto.id_categoria.nombre_categoria}}</option>
+                            {% for e in categorias %}
+                                <option value="{{e.id_categoria}}" class="form-control">{{e.nombre_categoria}}</option>
+                            {%endfor%}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                    	<label>Descripcion</label>
+                        <textarea id="txtDescripcion" name="txtDescripcion" class="form-control" 
+                        maxlength="50" required>{{publicacion.descripcion}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                    	<label>Precio</label>
+                        <input type="text" id="NumPrecioDisponible" name="NumPrecioDisponible" class="form-control" 
+                        maxlength="50" value = "{{publicacion.id_producto.precio}}"required>
+                    </div>
+
+                    <div class="form-group">
+                    	<label>Cantidad</label>
+                        <input type="text" id="NumCantidadDisponible" name="NumCantidadDisponible" class="form-control" 
+                        maxlength="50" value = "{{publicacion.id_producto.cantidad_disponible}}" required>
+                    </div>
+
+                    <label for="">Imagen producto</label>
+                    <div class="form-group">
+                        <input type="file" class="form-control-file"id="imgUpload" name="imgUpload" accept="image/png, .jpeg, .jpg"  required>
+                    </div>
+                    <label for="">Estado del producto</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value = "Nuevo" type="radio" name="txtEstadoProducto" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Nuevo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value = "Usado" type="radio" name="txtEstadoProducto" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Usado
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+
+            </div>
+    </div>
+</div>
+
+{% endblock %}

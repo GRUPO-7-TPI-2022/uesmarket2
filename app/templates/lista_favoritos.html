@@ -1,0 +1,84 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="nav navbar-light mb-3">
+    <div class="col-8">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'favoritos' %}">Todos los productos (10)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'listas' %}">Mis listas (2)</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-4" id="crearl">
+      <button type="button" class="btn btn-primary"><img src="{% static 'img/plus-circle.svg' %}"
+          class="img-fluid imagen1"> Crear lista</button>
+    </div>
+  </div>
+
+  <div class="nav navbar-light mb-3">
+    <div class="col-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">Tecnología (4)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Hogar (5)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container" method="POST">
+    <div class="card mb-3">
+      <div class="row">
+        <div class="col-4" id="img">
+          <img src="{% static 'img/Producto.jpg' %}" class="img-fluid rounded-start imagen2" />
+        </div>
+        <div class="col-8">
+          <div class="card-body">
+            <p class="card-text">2020_HP 14 14.0" WLED-Backlit Display Laptop, AMD Athlon Silver 3050U hasta 3.2GHz
+              (Beats i5-7200U), 4GB DDR4 RAM, 128GB SSD, 802.11AC WiFi+ Bluetooth 4.2, Type-C, HDMI, negro, Windows 10
+            </p>
+            <p>
+              <span class="state">Disponible</span>
+            </p>
+            <div class="row align-items-center">
+              <div class="col-6">
+                <h7 class="card-text" id="precio1">Precio:</h7>
+                <h7 class="card-text" id="precio2">$10.99</h7>
+              </div>
+              <div class="col-6">
+                <div class="row text-center">
+                  <div class="col-6">
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                  </div>
+                  <div class="col-6 dropdown" id="dropdown2">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">Mover</button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Tecnología</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Hogar</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="card-text text-center">
+                  <small class="text-muted">Producto agregado el 14 de noviembre de 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
