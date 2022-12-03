@@ -1,6 +1,7 @@
-#negocio{
+#negocio {
 	font-family: 'Courier New';
 }
+
 * {
 	/*	border: red 1px solid; */
 	margin: 0px;
@@ -71,122 +72,14 @@ body {
 	margin-bottom: 10px;
 }
 
-#listnav {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#search {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-.deseos {
-	color: black;
-}
-
-.deseos:link,
-.deseos:visited,
-.deseos:active {
-	text-decoration: none;
-}
-
-#dropdown1 {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-}
-
-#img {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-.imagen1 {
-	filter: invert(100%);
-}
-
-.imagen2 {
-	margin: 10px;
-}
-
-.imagen3 {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	width: 150px;
-	height: 150px;
-	filter: brightness(1.1);
-	mix-blend-mode: multiply;
-}
-
-.state {
-	background-color: #F2F3F4;
-	padding: 3px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 7px;
-	color: #337DFF;
-	font-weight: bold;
-}
-
-.notstate {
-	background-color: #F2F3F4;
-	padding: 3px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 7px;
-	color:red;
-	font-weight: bold;
-}
-
-#precio1 {
-	color: black;
-	font-weight: bold;
-}
-
-#precio2 {
-	color: red;
-	font-weight: bold;
-}
-
-footer {
-	padding: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#legal1 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#legal2 {
-	margin: auto;
-}
-
-#crearl {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-}
-
-.card {
-	margin-top: 10px;
-	background-color: white;
-	box-shadow: 0 0 5px 5px rgba(0, 0, 0, .07);
-	border-radius: 7px;
-	padding: 5px;
+/*BASE*/
+li {
+	padding: 10px;
 }
 
 .container-4 {
 	overflow: hidden;
-	width: 300px;
+	width: auto;
 	vertical-align: middle;
 	white-space: nowrap;
 }
@@ -258,6 +151,82 @@ footer {
 	background: white;
 }
 
-#formFavorito{
+.imagen3 {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 150px;
+	height: 150px;
+	filter: brightness(1.1);
+	mix-blend-mode: multiply;
+	padding: 0%;
+}
+
+/*FOOTER*/
+footer {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#legal {
+	margin: auto;
+	color: rgb(61, 61, 61);
+}
+
+/*FAVORITOS*/
+#favorite {
+	color: black;
+	font-size: clamp(1em, 1em + 1vw, 2em);
+	font-weight: bold;
+}
+
+.card {
+	margin-top: 10px;
+	background-color: white;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, .07);
+	border-radius: 7px;
+	padding: 5px;
+}
+
+.imagen1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imagen2 {
+	margin: 40px;
+	width: 50%;
+}
+
+.state {
+	background-color: #F2F3F4;
+	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 7px;
+	color: #337DFF;
+	font-weight: bold;
+}
+
+.notstate {
+	background-color: #F2F3F4;
+	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 7px;
+	color: red;
+	font-weight: bold;
+}
+
+#precio2 {
+	color: rgb(4 127 255);
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#formFavorito {
 	display: none;
 }
