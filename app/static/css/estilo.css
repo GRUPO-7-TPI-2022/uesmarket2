@@ -37,7 +37,6 @@ body {
 	object-fit: cover;
 	border-radius: 0.5 rem;
 	margin: 10px;
-	height: 500px;
 }
 
 .icon-guardar {
@@ -197,8 +196,9 @@ footer {
 }
 
 .imagen2 {
-	margin: 40px;
-	width: 50%;
+	margin: 20px;
+	width: auto;
+	max-height: 200px;
 }
 
 .state {
