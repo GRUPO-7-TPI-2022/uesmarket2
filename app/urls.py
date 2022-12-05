@@ -15,5 +15,6 @@ urlpatterns = [
     path('eliminarFavorito',views.eliminarFavorita),
     path('eliminarFavorito/<id>',views.deleteFavoritoList),
     path('registrar/',views.registrarCuenta,name='registrar'),
-    path('comentarPublicacion',views.comentarPublicacion)
+    path('comentarPublicacion',views.comentarPublicacion),
+    path('recuperarContraseña/', views.recuperarContraseña, name='recuperar')
 ]

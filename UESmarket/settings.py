@@ -69,7 +69,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'uesmarket',
         'USER': 'root',
-        'PASSWORD': '171297',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }

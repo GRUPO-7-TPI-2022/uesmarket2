@@ -303,3 +303,8 @@ def comentarPublicacion(request):
 
     #Pintaremos de nuevo la caja de comentarios
     return JsonResponse({'comentarios':comentarios})
+
+#function para recuperar contraseña
+
+def recuperarContraseña(request):
+    return render(request,"registration/forgotpassword.html")
