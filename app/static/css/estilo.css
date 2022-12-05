@@ -32,12 +32,12 @@ body {
 }
 
 .product-img {
-	background-color: black;
 	display: flex;
 	justify-content: center;
 	object-fit: cover;
 	border-radius: 0.5 rem;
 	margin: 10px;
+	height: 500px;
 }
 
 .icon-guardar {
