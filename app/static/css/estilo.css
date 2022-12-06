@@ -34,9 +34,12 @@ body {
 .product-img {
 	display: flex;
 	justify-content: center;
+	align-content: center;
 	object-fit: cover;
 	border-radius: 0.5 rem;
 	margin: 10px;
+	max-width: 80%;
+	height: auto;
 }
 
 .icon-guardar {
