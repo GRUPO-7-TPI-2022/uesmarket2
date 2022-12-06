@@ -38,8 +38,8 @@ body {
 	object-fit: cover;
 	border-radius: 0.5 rem;
 	margin: 10px;
-	max-width: 80%;
-	height: auto;
+	width: auto;
+	height: 500px;
 }
 
 .icon-guardar {
