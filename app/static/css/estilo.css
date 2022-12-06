@@ -178,6 +178,12 @@ footer {
 }
 
 /*FAVORITOS*/
+.namep:link,
+.namep:visited,
+.namep:active {
+	text-decoration: none;
+}
+
 #favorite {
 	color: black;
 	font-size: clamp(1em, 1em + 1vw, 2em);
